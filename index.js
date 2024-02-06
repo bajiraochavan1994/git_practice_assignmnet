@@ -1,12 +1,16 @@
-// check prime number
-let a = 3;
-let count =0
-for(let i=1;i<=a;i++){
-    if(a%2==0){
-        count++
+function primenum(n) {
+    if (n <= 1) {
+        return false;
     }
+    if (n === 2) {
+        return true;
+    }
+    for (var i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            return false;
+        }
+    }
+    return true;
 }
-if(count==2){
-    console.log("prime")
-}
-else{console.log("not prime")}
+
+console.log(primenum(4));
